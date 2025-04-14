@@ -1,0 +1,1 @@
+*target: @hw [((rtm ma a1) +~+ (rtm ma a2)) +<+ @ma [((a1 us vc) +~+ ((a2 us ker) +<+ @us [(vc us sys)]))]]

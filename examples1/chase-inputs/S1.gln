@@ -1,0 +1,32 @@
+[ bound = 500, limit = 5000, input_order ]
+
+
+    % Assume adversary corrupts sys but
+    % avoids detection by the attestation.
+l(V) = msp(us, M, us, sys, X)
+ => corrupt_at(us, sys, V).
+
+    % Assume vc depends on ker 
+depends(P, C, us, vc) => P = us & C = ker.
+
+    % Assume ker has no dependencies 
+depends(P, C, us, ker) => false.
+
+    % Assume a1 has no dependencies 
+depends(P, C, ma, a1) => false.
+
+    % Assume a2 has no dependencies 
+depends(P, C, ma, a2) => false.
+
+    % Assume rtm has no dependencies 
+depends(P, C, hw, rtm) => false.
+
+    % Assume rtm cannot be corrupted 
+l(V) = cor(hw, rtm) => false.
+
+
+m4_include(`S1.gli')m4_dnl
+
+m4_include(`S1_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl

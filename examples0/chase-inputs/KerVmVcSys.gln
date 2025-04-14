@@ -1,0 +1,21 @@
+[ bound = 500, limit = 5000, input_order ]
+
+    % Assume adversary corrupts sys but
+    % avoids detection by the attestation.
+l(V) = msp(ksus, M, ksus, sys, X)
+ => corrupt_at(ksus, sys, V).
+
+    % Assume vc depends on kernel 
+depends(P, C, ksus, vc) => P = ksus & C = ker.
+
+    % Assume ker has no dependencies 
+depends(P, C, ksus, ker) => false.
+
+    % Assume rtm cannot be corrupted 
+l(V) = cor(tpm, rtm) => false.
+
+m4_include(`KerVmVcSys.gli')m4_dnl
+
+m4_include(`KerVmVcSys_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl
