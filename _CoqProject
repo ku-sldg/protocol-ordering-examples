@@ -1,4 +1,4 @@
--Q examples0 ProtocolOrderingExamples
+-Q paperExamples ProtocolOrderingExamples
 -arg -w -arg -notation-overridden
 
-examples0
+paperExamples

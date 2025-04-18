@@ -32,7 +32,7 @@ Generate and compile the provided examples with:
 (cd scripts/ ; bash setup.sh <foldername>)
 make
 ```
-Option for `<foldername>` is *examples0* and *examples1*. 
+Option for `<foldername>` is *paperExamples* and *simpleExamples*. 
 
 The Chase output in XHTML can be found in the `<foldername>/chase-outputs` 
 directory. The attack graphs in Coq can be found in the `<foldername>` directory.
