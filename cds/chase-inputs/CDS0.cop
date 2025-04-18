@@ -1,1 +1,0 @@
-*target: @p0 [(boot p0 init) +<+ ((init p0 ima) +<+ ((ima p0 lkim) +<+ ((lkim p0 ker) +<+ (am p0 bins))))]
