@@ -1,0 +1,59 @@
+% Measurements:
+
+   % Bootloader measures Initramfs
+
+   % Initramfs measures IMA
+   % Initramfs measures SELinux
+
+   % IMA measures LKIM
+   % IMA measures SELinux
+   % IMA measures AM
+
+   % LKIM measures Kernel
+
+   % AM measures SELinux
+
+   % AM measures Config
+
+   % AM measures Bins
+
+
+
+[ bound = 500, limit = 5000, input_order ]
+
+
+
+    % Assume adversary corrupts CDS Binaries but 
+    % avoids detection by the attestation.
+l(V) = msp(p0, M, p0, bins, X)
+ => corrupt_at(p0, bins, V).
+
+
+
+
+
+    % Assume Bootloader has no dependencies 
+depends(P, C, p0, boot) => false.
+
+    % Assume Initramfs has no dependencies 
+depends(P, C, p0, init) => false.
+
+    % Assume IMA has no dependencies 
+depends(P, C, p0, ima) => false.
+
+    % Assume LKIM has no dependencies 
+depends(P, C, p0, lkim) => false.
+
+    % Assume AM depends on Kernel 
+depends(P, C, p0, am) => P = p0 & C = ker.
+
+
+
+    % Assume Bootloader cannot be corrupted 
+l(V) = cor(p0, boot) => false.
+
+
+
+m4_include(`CDS0.gli')m4_dnl
+m4_include(`CDS0.gli')m4_dnl
+m4_include(`thy.gli')m4_dnl

@@ -6,16 +6,14 @@ Definition A0 : attackgraph components :=
 	event := 
 		nat ;
 	edges :=
-		(6,0) :: (5,0) :: (4,1) :: (4,2) :: (1,0) :: (2,6) :: (3,1) :: (3,2) :: nil ;
+		(4,0) :: (3,0) :: (2,4) :: (1,2) :: nil ;
 	label := fun ev =>
 		match ev with
+		| 4 => inr (cor _ vc)
 		| 0 => inl (msp _ vc sys)
-		| 6 => inr (cor _ vc)
-		| 5 => inr (cor _ sys)
-		| 4 => inl (msp _ rtm abc)
-		| 1 => inl (msp _ lkim ker)
+		| 3 => inr (cor _ sys)
 		| 2 => inl (msp _ abc vc)
-		| 3 => inl (msp _ rtm lkim)
+		| 1 => inl (msp _ lkim ker)
 		| _ => inl (ms _)
 		end ;
 	eqDec_event := 
@@ -29,16 +27,14 @@ Definition A1 : attackgraph components :=
 	event := 
 		nat ;
 	edges :=
-		(6,0) :: (4,1) :: (4,2) :: (1,6) :: (2,0) :: (3,1) :: (3,2) :: (5,0) :: nil ;
+		(4,0) :: (2,0) :: (1,4) :: (1,2) :: (3,0) :: nil ;
 	label := fun ev =>
 		match ev with
+		| 4 => inr (cor _ ker)
 		| 0 => inl (msp _ vc sys)
-		| 6 => inr (cor _ ker)
-		| 4 => inl (msp _ rtm abc)
-		| 1 => inl (msp _ lkim ker)
 		| 2 => inl (msp _ abc vc)
-		| 3 => inl (msp _ rtm lkim)
-		| 5 => inr (cor _ sys)
+		| 1 => inl (msp _ lkim ker)
+		| 3 => inr (cor _ sys)
 		| _ => inl (ms _)
 		end ;
 	eqDec_event := 
@@ -52,17 +48,15 @@ Definition A2 : attackgraph components :=
 	event := 
 		nat ;
 	edges :=
-		(6,2) :: (2,0) :: (5,0) :: (4,7) :: (4,1) :: (7,2) :: (1,0) :: (3,2) :: (3,1) :: nil ;
+		(4,2) :: (2,0) :: (3,0) :: (5,2) :: (1,2) :: nil ;
 	label := fun ev =>
 		match ev with
-		| 0 => inl (msp _ vc sys)
-		| 6 => inr (cor _ vc)
+		| 4 => inr (cor _ vc)
 		| 2 => inl (msp _ abc vc)
-		| 5 => inr (cor _ sys)
-		| 4 => inl (msp _ rtm abc)
-		| 7 => inr (cor _ abc)
+		| 0 => inl (msp _ vc sys)
+		| 3 => inr (cor _ sys)
+		| 5 => inr (cor _ abc)
 		| 1 => inl (msp _ lkim ker)
-		| 3 => inl (msp _ rtm lkim)
 		| _ => inl (ms _)
 		end ;
 	eqDec_event := 
@@ -76,17 +70,15 @@ Definition A3 : attackgraph components :=
 	event := 
 		nat ;
 	edges :=
-		(6,1) :: (1,0) :: (4,1) :: (4,2) :: (2,0) :: (3,2) :: (3,7) :: (7,1) :: (5,0) :: nil ;
+		(4,1) :: (1,2) :: (2,0) :: (3,0) :: (5,1) :: nil ;
 	label := fun ev =>
 		match ev with
-		| 0 => inl (msp _ vc sys)
-		| 6 => inr (cor _ ker)
+		| 4 => inr (cor _ ker)
 		| 1 => inl (msp _ lkim ker)
-		| 4 => inl (msp _ rtm abc)
 		| 2 => inl (msp _ abc vc)
-		| 3 => inl (msp _ rtm lkim)
-		| 7 => inr (cor _ lkim)
-		| 5 => inr (cor _ sys)
+		| 0 => inl (msp _ vc sys)
+		| 3 => inr (cor _ sys)
+		| 5 => inr (cor _ lkim)
 		| _ => inl (ms _)
 		end ;
 	eqDec_event := 
@@ -95,5 +87,5 @@ Definition A3 : attackgraph components :=
 		eqDec_components
 |}.
 
-Definition S1 : list (attackgraph components) := 
+Definition S9 : list (attackgraph components) := 
 	A0 :: A1 :: A2 :: A3 :: nil.

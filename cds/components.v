@@ -1,14 +1,14 @@
 
 Inductive components : Type :=
-| sys : components
-| vc : components
+| bins : components
+| config : components
+| sel : components
+| am : components
 | ker : components
 | lkim : components
-| abc : components
-| vm : components
-| rtm : components
-| a1 : components
-| a2 : components.
+| ima : components
+| init : components
+| boot : components.
 
 Lemma eqDec_components : 
     forall (x y : components), {x = y} + {x <> y}.

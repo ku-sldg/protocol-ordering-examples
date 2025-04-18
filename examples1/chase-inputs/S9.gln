@@ -12,11 +12,11 @@ depends(P, C, us, vc) => P = us & C = ker.
     % Assume ker has no dependencies 
 depends(P, C, us, ker) => false.
 
-    % Assume abc has no dependencies 
-depends(P, C, ma, abc) => false.
-
     % Assume lkim has no dependencies 
 depends(P, C, ma, lkim) => false.
+
+    % Assume abc has no dependencies 
+depends(P, C, ma, abc) => false.
 
     % Assume rtm has no dependencies 
 depends(P, C, hw, rtm) => false.
@@ -25,8 +25,8 @@ depends(P, C, hw, rtm) => false.
 l(V) = cor(hw, rtm) => false.
 
 
-m4_include(`S5.gli')m4_dnl
+m4_include(`S9.gli')m4_dnl
 
-m4_include(`S5_dist.gli')m4_dnl
+m4_include(`S9_dist.gli')m4_dnl
 
 m4_include(`thy.gli')m4_dnl
