@@ -64,12 +64,11 @@ Lemma P4_P4 : order_fix P4 P4 = equiv.
 Proof. auto. Qed.
 Lemma P4_P5 : order_fix P4 P5 = incomparable.
 Proof. auto. Qed.
-Lemma P4_P6 : order_fix P4 P6 = leq. (** interesting *)
+Lemma P4_P6 : order_fix P4 P6 = leq.
 Proof. auto. Qed.
 Lemma P4_P7 : order_fix P4 P7 = leq.
 Proof. auto. Qed.
 
-(** update p5 description *)
 Lemma P5_P1 : order_fix P5 P1 = leq.
 Proof. auto. Qed.
 Lemma P5_P2 : order_fix P5 P2 = incomparable.
