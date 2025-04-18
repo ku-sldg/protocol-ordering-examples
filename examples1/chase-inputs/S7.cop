@@ -1,1 +1,0 @@
-*target: @hv [((vm ma abc) +<+ (vm ma lkim)) +<+ @ma [((abc us vc) +<+ (lkim us ker)) +<+ @us [(vc us sys)]]]
