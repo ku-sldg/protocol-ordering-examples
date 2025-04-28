@@ -12,14 +12,14 @@ depends(P, C, us, vc) => P = us & C = ker.
     % Assume ker has no dependencies 
 depends(P, C, us, ker) => false.
 
-    % Assume abc has no dependencies 
-depends(P, C, ma, abc) => false.
+    % Assume vcm has no dependencies 
+depends(P, C, ma, vcm) => false.
 
     % Assume lkim has no dependencies 
 depends(P, C, ma, lkim) => false.
 
-    % Assume mno has no dependencies 
-depends(P, C, hv, mno) => false.
+    % Assume mm has no dependencies 
+depends(P, C, hv, mm) => false.
 
     % Assume rtm has no dependencies 
 depends(P, C, hw, rtm) => false.

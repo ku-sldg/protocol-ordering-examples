@@ -3,11 +3,11 @@ Inductive components : Type :=
 | sys : components
 | vc : components
 | ker : components
-| abc : components
+| vcm : components
 | lkim : components
 | rtm : components
-| mno : components
-| xyz : components.
+| mm : components
+| c : components.
 
 Lemma eqDec_components : 
     forall (x y : components), {x = y} + {x <> y}.

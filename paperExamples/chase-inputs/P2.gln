@@ -15,8 +15,8 @@ depends(P, C, us, ker) => false.
     % Assume lkim has no dependencies 
 depends(P, C, ma, lkim) => false.
 
-    % Assume abc has no dependencies 
-depends(P, C, ma, abc) => false.
+    % Assume vcm has no dependencies 
+depends(P, C, ma, vcm) => false.
 
     % Assume rtm has no dependencies 
 depends(P, C, hw, rtm) => false.

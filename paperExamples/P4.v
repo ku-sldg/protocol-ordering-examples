@@ -12,7 +12,7 @@ Definition A0 : attackgraph components :=
 		| 4 => inr (cor _ vc)
 		| 0 => inl (msp _ vc sys)
 		| 3 => inr (cor _ sys)
-		| 1 => inl (msp _ abc vc)
+		| 1 => inl (msp _ vcm vc)
 		| 2 => inl (msp _ lkim ker)
 		| _ => inl (ms _)
 		end ;
@@ -32,7 +32,7 @@ Definition A1 : attackgraph components :=
 		match ev with
 		| 4 => inr (cor _ ker)
 		| 0 => inl (msp _ vc sys)
-		| 1 => inl (msp _ abc vc)
+		| 1 => inl (msp _ vcm vc)
 		| 2 => inl (msp _ lkim ker)
 		| 3 => inr (cor _ sys)
 		| _ => inl (ms _)
@@ -52,10 +52,10 @@ Definition A2 : attackgraph components :=
 	label := fun ev =>
 		match ev with
 		| 4 => inr (cor _ vc)
-		| 1 => inl (msp _ abc vc)
+		| 1 => inl (msp _ vcm vc)
 		| 0 => inl (msp _ vc sys)
 		| 3 => inr (cor _ sys)
-		| 5 => inr (cor _ abc)
+		| 5 => inr (cor _ vcm)
 		| 2 => inl (msp _ lkim ker)
 		| _ => inl (ms _)
 		end ;
@@ -75,7 +75,7 @@ Definition A3 : attackgraph components :=
 		match ev with
 		| 4 => inr (cor _ ker)
 		| 2 => inl (msp _ lkim ker)
-		| 1 => inl (msp _ abc vc)
+		| 1 => inl (msp _ vcm vc)
 		| 0 => inl (msp _ vc sys)
 		| 3 => inr (cor _ sys)
 		| 5 => inr (cor _ lkim)
