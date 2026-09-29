@@ -1,0 +1,1 @@
+*target: @hw [(cpu dr sinit) +<+ @dr [((sinit dr mle) +<+ (sinit fw smm)) +<+ (mle usr app)]]

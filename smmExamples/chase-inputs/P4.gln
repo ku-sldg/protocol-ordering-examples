@@ -1,0 +1,47 @@
+[ bound = 500, limit = 5000, input_order ]
+
+
+    % Assume adversary corrupts app but
+    % avoids detection by the attestation.
+l(V) = msp(P, M, usr, app, X)
+ => corrupt_at(usr, app, V).
+
+    % Assume ker depends on smm
+depends(P, C, os, ker) => P = fw & C = smm.
+
+    % Assume mle depends on smm
+depends(P, C, dr, mle) => P = fw & C = smm.
+
+    % Assume smm has no dependencies
+depends(P, C, fw, smm) => false.
+
+    % Assume bios has no dependencies
+depends(P, C, fw, bios) => false.
+
+    % Assume boot has no dependencies
+depends(P, C, os, boot) => false.
+
+    % Assume sinit has no dependencies
+depends(P, C, dr, sinit) => false.
+
+    % Assume app has no dependencies
+depends(P, C, usr, app) => false.
+
+    % Assume crtm has no dependencies
+depends(P, C, hw, crtm) => false.
+
+    % Assume cpu has no dependencies
+depends(P, C, hw, cpu) => false.
+
+    % Assume crtm cannot be corrupted
+l(V) = cor(hw, crtm) => false.
+
+    % Assume cpu cannot be corrupted
+l(V) = cor(hw, cpu) => false.
+
+
+m4_include(`P4.gli')m4_dnl
+
+m4_include(`P4_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl
