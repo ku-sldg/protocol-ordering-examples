@@ -1,0 +1,38 @@
+[ bound = 500, limit = 5000, input_order ]
+
+
+    % Assume adversary corrupts app but
+    % avoids detection by the attestation.
+l(V) = msp(P, M, nw, app, X)
+ => corrupt_at(nw, app, V).
+
+    % Assume appm depends on the secure world kernel
+depends(P, C, sw, appm) => P = sw & C = swk.
+
+    % Assume swk has no dependencies
+depends(P, C, sw, swk) => false.
+
+    % Assume rtlib depends on the normal world kernel
+depends(P, C, nw, rtlib) => P = nw & C = nwk.
+
+    % Assume nwk has no dependencies
+depends(P, C, nw, nwk) => false.
+
+    % Assume app has no dependencies
+depends(P, C, nw, app) => false.
+
+    % Assume pxy has no dependencies
+depends(P, C, atp, pxy) => false.
+
+    % Assume rtm has no dependencies
+depends(P, C, hw, rtm) => false.
+
+    % Assume rtm cannot be corrupted
+l(V) = cor(hw, rtm) => false.
+
+
+m4_include(`P4.gli')m4_dnl
+
+m4_include(`P4_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl

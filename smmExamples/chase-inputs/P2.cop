@@ -1,0 +1,1 @@
+*target: @hw [(crtm fw bios) +<+ @fw [(bios os boot) +<+ @os [(boot os ker) +<+ (ker usr app)]]]
