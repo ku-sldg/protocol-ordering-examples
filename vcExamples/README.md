@@ -1,6 +1,7 @@
 # Vulnerable Component Limits Protocol Strength
 
-
+A vulnerable measurer such as a virus checker running in userspace can nullify the expected benefits of replacing a
+secure component by an even more secure component.
 
 ## Target platform
 
@@ -30,7 +31,8 @@
 | `Baseline` | `c(vc) <= c(ker),  c(vc) <= c(vcm),  c(vcm) <= c(lkim)` | 
 | `Vulnerable vc` | `c(vc)^t <= c(mm),  baseline` |
 
-`Vulnerable vc` ordering assumes that the meta-measurer on the target platform is well-protected while the virus checker is vulnerable Therefore, corrupting the virus checker even within a limited time frame is easier than corrupting the meta-measurer.
+`Vulnerable vc` ordering assumes that the meta-measurer on the target platform is well-protected while the virus checker is vulnerable.
+Therefore, corrupting the virus checker even within a limited time frame is easier than corrupting the meta-measurer.
 
 ## Results
 
@@ -39,3 +41,8 @@
 | `P2 <= P3` | `baseline` | Replacing `mm` with `rtm` strengthens the protocol as expected |
 | `P2 = P3` | `vulnerable vc` | `vc` is the weak point nullying the benefit of choosing `rtm` over a sufficiently-protected `mm` |
 
+## Reproducing
+```
+(cd scripts/ ; bash setup.sh vcExamples)
+make
+```

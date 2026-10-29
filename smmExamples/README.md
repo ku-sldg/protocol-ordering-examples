@@ -1,11 +1,10 @@
-# System Management Mode and Static vs Dynamic Root of Trust
+# Static vs Dynamic Root of Trust <br> & <br> Measuring vs Containing System Management Mode
 
-Investigates the relative strength of Intel TXT's dynamic and static chains of trust 
-as well as the attacks on Intel Trusted Execution Technology (TXT) that motivated
-the SMI transfer monitor (STM).
+Investigates the relative strength of Intel Trusted Execution Technology (TXT)'s dynamic and static chains of trust 
+as well as the attacks on Intel TXT that motivated the SMI transfer monitor (STM).
 
-The former portion of this example evaluates distinct measurement chains with a common
-weakness, while the latter evaluates measuring a component versus containing it.
+The former portion of this example evaluates distinct measurement chains with a common weakness, 
+while the latter evaluates measuring a component versus containing it.
 
 ## Target platform
 
@@ -17,9 +16,9 @@ weakness, while the latter evaluates measuring a component versus containing it.
 | `smm` | `fw` | System management mode handler | yes | |
 | `boot` | `os` | Bootloader | yes | |
 | `ker` | `os` | OS kernel | yes | `smm` |
+| `stm` | `dr` | SMI transfer monitor | yes | |
 | `sinit` | `dr` | Authenticated code module launched by CPU | yes | |
 | `mle` | `dr` | Measured launch environment | yes | `smm` in `P1`-`P4` / `stm` in `P5`|
-| `stm` | `dr` | SMI transfer monitor | yes | |
 | `app` | `usr` | The application being attested | yes | |
 
 
@@ -52,3 +51,8 @@ Corrupting SMM is easier than any of the other measured component including STM.
 | `P2 <= P4` | Measuring `smm` is an improvement |
 | `P3 <= P5` | The `stm` is an improvement over measuring `smm` |
 
+## Reproducing
+```
+(cd scripts/ ; bash setup.sh smmExamples)
+make
+```
